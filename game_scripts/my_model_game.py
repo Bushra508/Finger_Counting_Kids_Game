@@ -263,6 +263,8 @@ class FingerCountingApp(QWidget):
         self.timer.start(30)
 
     def update_frame(self):
+        if self.question_number>= len (self.questions):
+            return
         ret, frame = self.cap.read()
         if not ret:
             return
